@@ -1,2 +1,2 @@
 # aliases_shell
-My set of alies for Bash and Zsh
+My set of aliases for Bash and Zsh
