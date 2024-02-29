@@ -1,0 +1,42 @@
+
+
+
+export $dir_www="/var/www/html"
+
+if [ -d "/etc/nginx/http.d"  ] ;then
+    export $dir_http="/etc/ngnix/http.d"
+fi
+
+if [ -d "/etc/nginx/sites-available"  ] ;then
+    export $dir_av="/etc/nginx/sites-available"
+    export $dir_en="/etc/nginx/sites-enabled"
+fi
+
+
+alias la="la -la"
+alias V="sudo vim"
+alias n_conf="sudo vim /etc/nginx/nginx.conf"
+
+alias sown="sudo chown"
+alias smod="sudo chmod"
+
+
+
+init_system=$(cat /proc/1/comm)
+
+if [[ "$init_system" == "systemd" ]] ; then
+    alias sss="sudo systemctl status"    
+    alias sstr="sudo systemctl start"    
+    alias sstp="sudo systemctl stop"    
+    alias srt="sudo systemctl restart"    
+    alias senb="sudo systemctl enable"    
+    alias sdis="sudo systemctl disable"    
+fi
+
+
+if [[ "$init_system" == "init" ]] ; then
+    alias rcs="sudo rc-service"
+    alias rcadd="sudo rc-update add"
+    alias rcdel="sudo rc-update del"
+    alias rcshow="sudo rc-update show"
+fi
