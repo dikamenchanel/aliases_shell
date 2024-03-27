@@ -1,7 +1,8 @@
 
 
-
-export $dir_www="/var/www/html"
+if [ -d "/var/www/html" ] ;then
+    export $dir_www="/var/www/html"
+fi
 
 if [ -d "/etc/nginx/http.d"  ] ;then
     export $dir_http="/etc/ngnix/http.d"
